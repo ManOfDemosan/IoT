@@ -4,6 +4,15 @@ metadata:
   name: example-ingress
 spec:
   rules:
+  - http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: app3
+            port:
+              number: 80
   - host: "app1.com"
     http:
       paths:
